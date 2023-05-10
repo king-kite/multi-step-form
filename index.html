@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi Step Form</title>
+    <link rel="icon" href="assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .attribution { font-size: 11px; margin: 1rem 0; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="sidebar">
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <span id="nav-step-1" class="sn active"><span>1</span></span>
+            <div class="title">
+              <span>step 1</span>
+              <h3>your info</h3>
+            </div>
+          </li>
+          <li class="sidebar-list-item">
+            <span id="nav-step-2" class="sn"><span>2</span></span>
+            <div class="title">
+              <span>step 2</span>
+              <h3>select plan</h3>
+            </div>
+          </li>
+          <li class="sidebar-list-item">
+            <span id="nav-step-3" class="sn"><span>3</span></span>
+            <div class="title">
+              <span>step 3</span>
+              <h3>add-ons</h3>
+            </div>
+          </li>
+          <li class="sidebar-list-item">
+            <span id="nav-step-4" class="sn"><span>4</span></span>
+            <div class="title">
+              <span>step 4</span>
+              <h3>summary</h3>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <form id="form" class="form-container">
+          <div class="content-wrapper">
+            <div class="content">
+              <h1 id="title" class="title">Personal info</h1>
+              <p id="description" class="description">
+                Please provide your name, email address and phone number.
+              </p>
+              <p id="error-message"></p>
+              <div class="form-content">
+                <div id="first-screen" class="first-screen show">
+                  <div id="name-error-container" class="input-container">
+                    <div class="input-title">
+                      <label for="name">name</label>
+                      <p id="name-error-title">This field is required</p>
+                    </div>
+                    <input
+                      id="name"
+                      name="name"
+                      placeholder="e.g. Stephen King"
+                      type="text"
+                    />
+                  </div>
+                  <div id="email-error-container" class="input-container">
+                    <div class="input-title">
+                      <label for="email">email address</label>
+                      <p id="email-error-title"></p>
+                    </div>
+                    <input
+                      id="email"
+                      name="email"
+                      placeholder="e.g. stephenking@lorem.com"
+                    />
+                  </div>
+                  <div id="phone-error-container" class="input-container">
+                    <div class="input-title">
+                      <label for="phone">phone number</label>
+                      <p id="phone-error-title"></p>
+                    </div>
+                    <input
+                      id="phone"
+                      name="phone"
+                      placeholder="e.g. +1 234 567 890, +234 123 4567 890"
+                      type="tel"
+                    />
+                  </div>
+                </div>
+                <div id="second-screen" class="second-screen">
+                  <ul id="plan-list" class="plan-list"></ul>
+                  <div class="plan-switch-container">
+                    <p id="plan-switch-monthly" class="active">monthly</p>
+                    <div id="plan-switch-button" class="plan-switch-button">
+                      <div></div>
+                    </div>
+                    <p id="plan-switch-yearly">yearly</p>
+                  </div>
+                </div>
+                <div id="third-screen" class="third-screen">
+                  <ul id="addons-list" class="addons-list"></ul>
+                </div>
+                <div id="fourth-screen" class="fourth-screen">
+                  <div class="fourth-screen-container">
+                    <div class="heading">
+                      <h1><span id="finish-title"></span><span id="change">change</span></h1>
+                      <p id="finish-plan-price"></p>
+                    </div>
+                    <div class="hr"></div>
+                    <ul id="finish-up-list" class="finish-up-list"></ul>
+                  </div>
+                  <div class="finish-up-total-price-container">
+                    <p class="finish-up-total-price-title">
+                      Total &lpar;per month&rpar;
+                    </p>
+                    <p id="finish-up-total-price" class="finish-up-total-price"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="base-footer">
+            <button id="form-go-back" class="back" type="button">
+              go back
+            </button>
+            <button id="form-submit" class="submit" type="submit">
+              next step
+            </button>
+          </div>
+        </form>
+        <div id="thank-you" class="thank-you">
+          <div class="thanks">
+            <div class="thanks-icon-container">
+              <img src="assets/images/icon-thank-you.svg" alt="" />
+            </div>
+            <h1>Thank you&excl;</h1>
+            <p>
+              Thanks for confirming your subscription! We hope you have fun using
+              our platform. If you every need support, please feel free to email
+              us at support@loremgaming.com.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/king-kite">Emmanuel (king-kite)</a>.
+    </div>
+
+    <script src="script.js"></script>
+    <script src="screens.js"></script>
+    <script src="first-screen.js"></script>
+    <script src="second-screen.js"></script>
+    <script src="third-screen.js"></script>
+    <script src="fourth-screen.js"></script>
+    <script src="errors.js"></script>
+  </body>
+</html>
